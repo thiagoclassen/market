@@ -4,14 +4,21 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { OrdersComponent } from './orders/orders.component';
+import { ClientsComponent } from './clients/clients.component';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OrdersComponent,
+    ClientsComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +26,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HttpModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

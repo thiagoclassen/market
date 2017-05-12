@@ -1,22 +1,22 @@
 <div fxLayout="column" fxFlex>
 
   <md-toolbar color="primary">
-    <span>Angular Material</span>
+    <span>Market List</span>
   </md-toolbar>
 
   <md-sidenav-container fxFlex>
     <!-- Menu -->
     <md-sidenav mode="side" opened>
       <md-nav-list>
-        <a md-list-item>Pedidos</a>
-        <a md-list-item>Clientes</a>
-        <a md-list-item>Produtos</a>
+        <a md-list-item routerLink="/orders" routerLinkActive="active">Pedidos</a>
+        <a md-list-item routerLink="/clients" routerLinkActive="active">Clientes</a>
+        <a md-list-item routerLink="/products" routerLinkActive="active">Produtos</a>
       </md-nav-list>
     </md-sidenav>
     <!-- Content -->
-    <div class="content">
-      Page Content
-    </div>
+    <md-card fxFlex="80">
+      <router-outlet></router-outlet>
+    </md-card>
   </md-sidenav-container>
 
 </div>
