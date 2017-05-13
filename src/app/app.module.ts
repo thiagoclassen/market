@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { MaterialModule } from './material.module';
+import { DialogsModule } from './dialog/dialogs.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { OrdersComponent } from './orders/orders.component';
@@ -28,6 +29,7 @@ import { ProductsComponent } from './products/products.component';
     FlexLayoutModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    DialogsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
