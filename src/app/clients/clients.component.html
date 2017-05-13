@@ -4,16 +4,17 @@
     <md-toolbar color="primary">
       <h2>Clientes</h2>
       <span class="dash-spacer"></span>
-      <h3>Buscar:</h3>
-      <md-input-container>
-        <input type="text" mdInput placeholder="Cliente" [formControl]="clientCtrl" [mdAutocomplete]="auto">
-      </md-input-container>
+      
+        <h3>Buscar:</h3>
+        <md-input-container>
+          <input type="text" mdInput placeholder="Cliente" [formControl]="clientCtrl" [mdAutocomplete]="auto">
+        </md-input-container>
 
-      <md-autocomplete #auto="mdAutocomplete">
-        <md-option *ngFor="let client of filteredClients | async" [value]="client.name">
-          {{ client.name }}
-        </md-option>
-      </md-autocomplete>
+        <md-autocomplete #auto="mdAutocomplete">
+          <md-option *ngFor="let client of filteredClients | async" [value]="client.name">
+            {{ client.name }}
+          </md-option>
+        </md-autocomplete>
 
     </md-toolbar>
 
