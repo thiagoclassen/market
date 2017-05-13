@@ -1,20 +1,23 @@
 <div fxLayout="column" fxFlex>
 
   <md-toolbar color="primary">
-    <span>Market List</span>
+      <h1>Market List</h1>
+      <span class="dash-spacer"></span>
+      <span>Olá, User.</span>
+      <button md-button>Sair <i class="material-icons">exit_to_app</i></button>
   </md-toolbar>
 
   <md-sidenav-container fxFlex>
     <!-- Menu -->
     <md-sidenav mode="side" opened>
       <md-nav-list>
-        <a md-list-item routerLink="/orders" routerLinkActive="active">Pedidos</a>
-        <a md-list-item routerLink="/clients" routerLinkActive="active">Clientes</a>
-        <a md-list-item routerLink="/products" routerLinkActive="active">Produtos</a>
+        <a md-list-item routerLink="/orders" routerLinkActive="active"><i class="material-icons nav-icon">shopping_cart</i>Pedidos</a>
+        <a md-list-item routerLink="/clients" routerLinkActive="active"><i class="material-icons nav-icon">people</i>    Clientes</a>
+        <a md-list-item routerLink="/products" routerLinkActive="active"><i class="material-icons nav-icon">shopping_basket</i>Produtos</a>
       </md-nav-list>
     </md-sidenav>
     <!-- Content -->
-    <md-card fxFlex="80">
+    <md-card>
       <router-outlet></router-outlet>
     </md-card>
   </md-sidenav-container>

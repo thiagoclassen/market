@@ -1,3 +1,29 @@
-<p>
-  clients works!
-</p>
+<div fxLayout="column" fxFlexFill>
+  <div class="content-box">
+
+    <md-toolbar color="primary">
+      <h2>Clientes</h2>
+      <span class="dash-spacer"></span>
+      <h3>Buscar:</h3>
+      <md-input-container>
+        <input type="text" mdInput placeholder="Cliente" [formControl]="clientCtrl" [mdAutocomplete]="auto">
+      </md-input-container>
+
+      <md-autocomplete #auto="mdAutocomplete">
+        <md-option *ngFor="let client of filteredClients | async" [value]="client.name">
+          {{ client.name }}
+        </md-option>
+      </md-autocomplete>
+
+    </md-toolbar>
+
+    <md-nav-list>
+      <a md-list-item *ngFor="let client of clients">{{client.name}}</a>
+    </md-nav-list>
+
+    <md-toolbar class="blend-color">
+      <span class="dash-spacer"></span>
+      <button md-raised-button>Novo Cliente</button>
+    </md-toolbar>
+  </div>
+</div>
