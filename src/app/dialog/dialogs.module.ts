@@ -1,24 +1,30 @@
 import { DialogsService } from './dialogs.service';
 import { MaterialModule } from '@angular/material';
+import { MyMaterialModule } from '../my-material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
-import { ConfirmDialog } from '../clients/client-dialog/add-client-dialog.component';
+import { AddClientDialog } from '../clients/client-dialog/add-client-dialog.component';
 
 @NgModule({
     imports: [
         MaterialModule.forRoot(),
+        MyMaterialModule,
+        FlexLayoutModule,
+        FormsModule
     ],
     exports: [
-        ConfirmDialog,
+        AddClientDialog,
     ],
     declarations: [
-        ConfirmDialog,
+        AddClientDialog,
     ],
     providers: [
         DialogsService,
     ],
     entryComponents: [
-        ConfirmDialog,
+        AddClientDialog,
     ],
 })
 export class DialogsModule { }

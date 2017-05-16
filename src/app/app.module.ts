@@ -6,13 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { MaterialModule } from './material.module';
+import { MyMaterialModule } from './my-material.module';
 import { DialogsModule } from './dialog/dialogs.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { OrdersComponent } from './orders/orders.component';
 import { ClientsComponent } from './clients/clients.component';
 import { ProductsComponent } from './products/products.component';
+import { SearchPipe } from './shared/search.pipe';
 
 @NgModule({
   declarations: [
@@ -20,12 +21,13 @@ import { ProductsComponent } from './products/products.component';
     OrdersComponent,
     ClientsComponent,
     ProductsComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,
     HttpModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    MyMaterialModule,
     FlexLayoutModule,
     AppRoutingModule,
     ReactiveFormsModule,

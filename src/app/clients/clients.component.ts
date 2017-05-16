@@ -3,6 +3,7 @@ import { Client } from './shared/client';
 import { ClientService } from './shared/client.service';
 import { FormControl } from '@angular/forms';
 import { DialogsService } from '../dialog/dialogs.service';
+import { SearchPipe } from "../shared/search.pipe";
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
 
@@ -15,19 +16,23 @@ import 'rxjs/add/operator/map';
 export class ClientsComponent implements OnInit {
 
   clients: Client[];
+  listClients: Client[];
   clientCtrl: FormControl;
   filteredClients: any;
 
   constructor(private clientService: ClientService, private dialogService: DialogsService) {
     this.clients = [];
+    this.listClients = [];
     this.clientCtrl = new FormControl();
     this.filteredClients = this.clientCtrl.valueChanges
-      .startWith([])
+      .startWith(null)
       .map(name => this.filterClients(name));
   }
 
   ngOnInit() {
-    this.clientService.getClientList().subscribe(response => this.clients = response);
+    this.clientService.getClientList().subscribe(response => {
+      this.clients = response;
+    });
   }
 
   filterClients(val: any) {
@@ -36,7 +41,7 @@ export class ClientsComponent implements OnInit {
 
   public openDialog() {
     this.dialogService
-      .confirm('Confirm Dialog', 'Are you sure you want to do this?')
+      .addClient()
       .subscribe(res => console.log(res));
   }
 
