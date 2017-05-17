@@ -15,9 +15,14 @@
           {{ product.name }}
         </md-option>
       </md-autocomplete>
-
     </md-toolbar>
 
+
+    <md-toolbar color="primary">
+      <h4>Nome</h4>
+      <span class="dash-spacer"></span>
+      <h4>Tipo</h4>
+    </md-toolbar>
     <md-nav-list>
       <div *ngFor="let product of products | search:productCtrl.value">
         <md-list-item>
