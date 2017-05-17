@@ -1,0 +1,28 @@
+.content-box {
+    width: 95%;
+    height: 90%;
+    margin: auto;
+}
+
+md-nav-list{
+    border: 2px gray solid;
+    border-top: 0px;
+    height: 80%;
+    overflow-y: auto;
+}
+
+md-input-container{
+    margin: 8px 5px 0px 8px;
+}
+
+button {
+    margin: 10px;
+}
+
+.dash-spacer {
+  flex: 1 1 auto;  
+}
+
+.blend-color {
+    background-color: #303030;
+}

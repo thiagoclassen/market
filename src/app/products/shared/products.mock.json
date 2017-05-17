@@ -1,0 +1,30 @@
+{
+    "products":[{
+        "name": "Alface",
+        "unit": "unid."
+    },{
+        "name": "Batata",
+        "unit": "Kg"
+    },{
+        "name": "Beterraba",
+        "unit": "Kg"
+    },{
+        "name": "Brócolis",
+        "unit": "unid."
+    },{
+        "name": "Cenoura",
+        "unit": "Kg"
+    },{
+        "name": "Laranja",
+        "unit": "Kg"
+    },{
+        "name": "Maçã",
+        "unit": "Kg"
+    },{
+        "name": "Ovo",
+        "unit": "cx"
+    },{
+        "name": "Morango",
+        "unit": "Bandeja"
+    }]
+}

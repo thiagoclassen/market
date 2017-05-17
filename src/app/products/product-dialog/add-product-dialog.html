@@ -1,0 +1,17 @@
+<md-dialog-content>
+    <md-toolbar color="primary">
+        <h2>Novo Produto</h2>
+    </md-toolbar>
+
+    <div fxLayout="row">
+        <h2>Nome:</h2>
+        <md-input-container>
+            <input type="text" mdInput [(ngModel)]="name" placeholder="Cliente" required>
+        </md-input-container>
+    </div>
+
+    <md-dialog-actions >
+        <button type="button" md-raised-button (click)="AddClient()">OK</button>
+        <button type="button" md-button (click)="dialogRef.close()">Cancel</button>
+    </md-dialog-actions>
+</md-dialog-content>

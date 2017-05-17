@@ -3,7 +3,7 @@ import { Client } from './shared/client';
 import { ClientService } from './shared/client.service';
 import { FormControl } from '@angular/forms';
 import { DialogsService } from '../dialog/dialogs.service';
-import { SearchPipe } from "../shared/search.pipe";
+import { SearchPipe } from '../shared/search.pipe';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
 
