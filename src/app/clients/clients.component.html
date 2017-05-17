@@ -11,7 +11,7 @@
         </md-input-container>
 
         <md-autocomplete #auto="mdAutocomplete">
-          <md-option *ngFor="let client of filteredClients | async" [value]="client.name">
+          <md-option *ngFor="let client of filteredClients | async" [value]="client.name" (click)="setFilter(client.name)">
             {{ client.name }}
           </md-option>
         </md-autocomplete>
@@ -19,12 +19,12 @@
     </md-toolbar>
 
     <md-nav-list>
-      <a md-list-item *ngFor="let client of clients">{{client.name}}</a>
+      <a md-list-item *ngFor="let client of clients | search:clientCtrl.value" >{{client.name}}</a>
     </md-nav-list>
 
     <md-toolbar class="blend-color">
       <span class="dash-spacer"></span>
-      <button md-raised-button>Novo Cliente</button>
+      <button md-raised-button (click)="openDialog()">Novo Cliente</button>
     </md-toolbar>
   </div>
 </div>
