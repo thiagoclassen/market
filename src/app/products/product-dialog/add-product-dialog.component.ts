@@ -8,9 +8,9 @@ import { Product } from '../shared/product';
 // TODO: Finish.
 
 @Component({
-    selector: 'add-Product-dialog',
-    templateUrl: './add-Product-dialog.html',
-    styleUrls: ['./add-Product-dialog.scss'],
+    selector: 'add-product-dialog',
+    templateUrl: './add-product-dialog.html',
+    styleUrls: ['./add-product-dialog.scss'],
     providers: [ProductService]
 })
 export class AddProductDialog {
