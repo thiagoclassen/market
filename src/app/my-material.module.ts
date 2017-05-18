@@ -9,7 +9,8 @@ import {
   MdListModule,
   MdAutocompleteModule,
   MdInputModule,
-  MdDialogModule
+  MdDialogModule,
+  MdTabsModule
 } from '@angular/material';
 
 @NgModule({
@@ -21,7 +22,8 @@ import {
     MdListModule,
     MdAutocompleteModule,
     MdInputModule,
-    MdDialogModule],
+    MdDialogModule,
+    MdTabsModule],
   exports: [MdButtonModule,
     MdCheckboxModule,
     MdToolbarModule,
@@ -30,6 +32,7 @@ import {
     MdListModule,
     MdAutocompleteModule,
     MdInputModule,
-    MdDialogModule]
+    MdDialogModule,
+    MdTabsModule]
 })
 export class MyMaterialModule { }

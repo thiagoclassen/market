@@ -5,7 +5,6 @@
 // @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
 @import '~@angular/material/prebuilt-themes/purple-green.css';
 
-
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
@@ -51,4 +50,8 @@ html, body {
 
   margin: 0;
   height: 100%;
+}
+
+.mat-tab-body-wrapper[_ngcontent-c6]{
+    height: inherit;
 }
