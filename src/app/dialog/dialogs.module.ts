@@ -11,7 +11,7 @@ import { AddProductDialog } from '../products/product-dialog/add-product-dialog.
 
 @NgModule({
     imports: [
-        MaterialModule.forRoot(),
+        MaterialModule,
         MyMaterialModule,
         FlexLayoutModule,
         FormsModule

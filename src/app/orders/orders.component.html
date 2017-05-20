@@ -9,9 +9,18 @@
           <h2>Pedidos</h2>
           <span class="dash-spacer"></span>
 
-          <h3>Buscar:</h3>
           <md-input-container>
-            <input type="text" mdInput placeholder="Pedido" [formControl]="orderCtrl" [mdAutocomplete]="auto">
+            <input mdInput [mdDatepicker]="picker" placeholder="Escolha a data">
+            <button mdSuffix [mdDatepickerToggle]="picker"></button>
+          </md-input-container>
+          <md-datepicker #picker></md-datepicker>
+          <h3>Clientes:</h3>
+          <md-input-container>
+            <input type="text" mdInput placeholder="Todos" [formControl]="orderCtrl" [mdAutocomplete]="auto">
+          </md-input-container>
+          <h3>Produtos:</h3>
+          <md-input-container>
+            <input type="text" mdInput placeholder="Todos" [formControl]="orderCtrl" [mdAutocomplete]="auto">
           </md-input-container>
 
           <md-autocomplete #auto="mdAutocomplete">
