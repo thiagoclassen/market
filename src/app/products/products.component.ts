@@ -30,19 +30,23 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.productService.getProductList().subscribe(response => {
-      this.products = response;
-    });
+    this.getData();
   }
 
   filterProducts(val: any) {
     return val ? this.products.filter(s => new RegExp(`^${val}`, 'gi').test(s.name)) : this.products;
   }
 
-  public openDialog() {
+  openDialog() {
     this.dialogService
-      .addClient()
-      .subscribe(res => console.log(res));
+      .addProduct()
+      .subscribe(res => this.getData());
+  }
+
+  getData() {
+    this.productService.getProductList().subscribe(response => {
+      this.products = response;
+    });
   }
 
 }

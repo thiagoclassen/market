@@ -30,19 +30,23 @@ export class ClientsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.clientService.getClientList().subscribe(response => {
-      this.clients = response;
-    });
+    this.getData();
   }
 
   filterClients(val: any) {
     return val ? this.clients.filter(s => new RegExp(`^${val}`, 'gi').test(s.name)) : this.clients;
   }
 
-  public openDialog() {
+  openDialog() {
     this.dialogService
       .addClient()
-      .subscribe(res => console.log(res));
+      .subscribe(res => this.getData());
+  }
+
+  getData() {
+    this.clientService.getClientList().subscribe(response => {
+      this.clients = response;
+    });
   }
 
 }

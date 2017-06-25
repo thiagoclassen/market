@@ -10,6 +10,13 @@
         </md-input-container>
     </div>
 
+    <div fxLayout="row">
+        <h2>Medida:</h2>
+        <md-input-container>
+            <input type="text" mdInput [(ngModel)]="unit" placeholder="kg, cx, unid." required>
+        </md-input-container>
+    </div>
+
     <md-dialog-actions >
         <button type="button" md-raised-button (click)="AddProduct()">OK</button>
         <button type="button" md-button (click)="dialogRef.close()">Cancel</button>

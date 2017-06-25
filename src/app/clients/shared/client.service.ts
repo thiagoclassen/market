@@ -15,13 +15,13 @@ export class ClientService {
     getClientList(): Observable<Client[]> {
         return this.http.get(this.link)
             .map((response: Response) => response.json())
-            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+            .catch((error: any) => Observable.throw(error.json() || 'Server error'));
     }
 
     addClient(client: Client) {
         return this.http.post(this.link, client, this.options)
             .map((response) => console.log(response))
-            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+            .catch((error: any) => Observable.throw(error.json() || 'Server error'));
     }
 
 }

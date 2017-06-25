@@ -60,9 +60,8 @@
 
         <!-- Header -->
         <md-toolbar color="primary">
-          <h2>Pedidos</h2>
+          <h2>Listas</h2>
           <span class="dash-spacer"></span>
-
           <h3>Buscar:</h3>
           <md-input-container>
             <input type="text" mdInput placeholder="Pedido" [formControl]="orderCtrl" [mdAutocomplete]="auto">
@@ -80,14 +79,18 @@
         <md-toolbar color="primary">
           <h4>Nome</h4>
           <span class="dash-spacer"></span>
+          <h2>Entrega</h2>
+          <span class="dash-spacer"></span>
           <h4>Tipo</h4>
         </md-toolbar>
         <md-nav-list>
-          <div *ngFor="let order of orders | search:orderCtrl.value">
+          <div *ngFor="let list of lists">
             <md-list-item>
-              <span>{{order.name}}</span>
+              <span>{{list.client.name}}</span>
               <span class="dash-spacer"></span>
-              <span>{{order.unit}}</span>
+              <span>{{list.deliveryDate | date: 'd/M/y'}}</span>
+              <span class="dash-spacer"></span>
+              <span>{{list.total | currency:'BRL':true}}</span>
             </md-list-item>
           </div>
         </md-nav-list>
@@ -95,10 +98,8 @@
         <!-- Button -->
         <md-toolbar class="blend-color">
           <span class="dash-spacer"></span>
-          <button md-raised-button (click)="openDialog()">Novo Pedido</button>
+          <button md-raised-button (click)="createListDialog()">Nova Lista</button>
         </md-toolbar>
-
-
 
       </md-tab>
     </md-tab-group>

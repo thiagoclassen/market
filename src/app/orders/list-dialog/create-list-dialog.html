@@ -1,0 +1,63 @@
+<md-dialog-content>
+  <md-toolbar color="primary">
+    <h2>Nova Lista de Compra</h2>
+    <span class="dash-spacer"></span>
+    <md-input-container>
+      <input mdInput disabled required [mdDatepicker]="picker" [(ngModel)]="date" placeholder="Escolha a data">
+      <button mdSuffix [mdDatepickerToggle]="picker"></button>
+    </md-input-container>
+    <md-datepicker #picker></md-datepicker>
+
+    <h3>Cliente:</h3>
+    <md-input-container>
+      <input type="text" mdInput required [(ngModel)]="selClient" placeholder="Cliente" [formControl]="clientCtrl" [mdAutocomplete]="auto">
+    </md-input-container>
+
+    <md-autocomplete #auto="mdAutocomplete">
+      <md-option *ngFor="let client of filteredClients | async" [value]="client.name">
+        {{ client.name }}
+      </md-option>
+    </md-autocomplete>
+  </md-toolbar>
+
+  <md-toolbar color="primary">
+    <h4>Sel.</h4>
+    <span class="dash-spacer"></span>
+    <h4>Nome</h4>
+    <span class="dash-spacer"></span>
+    <h2>Qtd.</h2>
+    <span class="dash-spacer"></span>
+    <h4>Preço/unid</h4>
+    <span class="dash-spacer"></span>
+    <h4>Total</h4>
+  </md-toolbar>
+
+  <md-nav-list>
+    <div *ngFor="let product of products; let idx=index">
+      <md-list-item>
+        <md-checkbox [(ngModel)]="product.sel" (ngModelChange)="updateProduct(product)"></md-checkbox>
+        <span class="dash-spacer"></span>
+        <span (click)=selectProduct(product)>{{product.name}}</span>
+        <span class="dash-spacer"></span>
+        <md-input-container>
+          <input [hidden]="!product.sel" type="number" mdInput (ngModelChange)="updateProduct(product)" [(ngModel)]="product.qtd" placeholder="5x"
+            required>
+        </md-input-container>
+        <span class="dash-spacer"></span>
+        <span [hidden]="!product.sel">{{product.unit}}</span>
+        <span class="dash-spacer"></span>
+        <md-input-container>
+          <input type="number" [hidden]="!product.sel" mdInput (ngModelChange)="updateProduct(product)" [(ngModel)]="product.price"
+            placeholder="0.00" required>
+        </md-input-container>
+        <span class="dash-spacer"></span>
+        <span [hidden]="!product.sel">{{product.qtd * product.price | currency:'BRL':true}}</span>
+      </md-list-item>
+    </div>
+  </md-nav-list>
+
+  <md-dialog-actions>
+    <button type="button" md-raised-button (click)="AddList()">OK</button>
+    <button type="button" md-button (click)="dialogRef.close()">Cancel</button>
+  </md-dialog-actions>
+</md-dialog-content>

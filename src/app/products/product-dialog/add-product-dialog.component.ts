@@ -16,13 +16,14 @@ import { Product } from '../shared/product';
 export class AddProductDialog {
 
     public name: string;
+    public unit: string;
 
     constructor(public dialogRef: MdDialogRef<AddProductDialog>, private ProductService: ProductService) { }
 
     public AddProduct() {
-        const product = new Product(this.name, 'kg');
+        const product = new Product(this.name, this.unit);
         this.ProductService.addProduct(product).subscribe();
-        this.dialogRef.close(Product);
+        this.dialogRef.close(product);
     }
 
 }
