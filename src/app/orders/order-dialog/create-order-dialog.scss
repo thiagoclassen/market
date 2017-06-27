@@ -1,0 +1,36 @@
+md-dialog-content{
+    height: 100%;
+}
+
+md-dialog-actions{
+    justify-content: flex-end;
+}
+
+md-input-container{
+    margin: 8px 5px 0px 8px;
+}
+
+.content-box {
+    width: 95%;
+    height: 90%;
+    margin: auto;
+}
+
+md-nav-list{
+    border: 2px gray solid;
+    border-top: 0px;
+    height: 80%;
+    overflow-y: auto;
+}
+
+button {
+    margin: 10px;
+}
+
+.dash-spacer {
+  flex: 1 1 auto;  
+}
+
+.blend-color {
+    background-color: #303030;
+}

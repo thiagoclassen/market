@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddClientDialog } from '../clients/client-dialog/add-client-dialog.component';
 import { AddProductDialog } from '../products/product-dialog/add-product-dialog.component';
 import { CreateListDialog } from '../orders/list-dialog/create-list-dialog.component';
+import { CreateOrderDialog } from '../orders/order-dialog/create-order-dialog.component';
 
 
 @NgModule({
@@ -23,12 +24,14 @@ import { CreateListDialog } from '../orders/list-dialog/create-list-dialog.compo
     exports: [
         AddClientDialog,
         AddProductDialog,
-        CreateListDialog
+        CreateListDialog,
+        CreateOrderDialog
     ],
     declarations: [
         AddClientDialog,
         AddProductDialog,
-        CreateListDialog
+        CreateListDialog,
+        CreateOrderDialog
     ],
     providers: [
         DialogsService,
@@ -36,7 +39,8 @@ import { CreateListDialog } from '../orders/list-dialog/create-list-dialog.compo
     entryComponents: [
         AddClientDialog,
         AddProductDialog,
-        CreateListDialog
+        CreateListDialog,
+        CreateOrderDialog
     ],
 })
 export class DialogsModule { }

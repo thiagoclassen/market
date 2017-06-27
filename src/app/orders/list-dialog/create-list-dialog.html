@@ -3,14 +3,14 @@
     <h2>Nova Lista de Compra</h2>
     <span class="dash-spacer"></span>
     <md-input-container>
-      <input mdInput disabled required [mdDatepicker]="picker" [(ngModel)]="date" placeholder="Escolha a data">
+      <input mdInput required [mdDatepicker]="picker" [(ngModel)]="date" placeholder="Escolha a data">
       <button mdSuffix [mdDatepickerToggle]="picker"></button>
     </md-input-container>
     <md-datepicker #picker></md-datepicker>
 
     <h3>Cliente:</h3>
     <md-input-container>
-      <input type="text" mdInput required [(ngModel)]="selClient" placeholder="Cliente" [formControl]="clientCtrl" [mdAutocomplete]="auto">
+      <input type="text" mdInput required [(ngModel)]="selClient" (ngModelChange)="manageList()" placeholder="Cliente" [formControl]="clientCtrl" [mdAutocomplete]="auto">
     </md-input-container>
 
     <md-autocomplete #auto="mdAutocomplete">

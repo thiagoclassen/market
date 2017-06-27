@@ -2,6 +2,7 @@ import { Observable } from 'rxjs/Rx';
 import { AddClientDialog } from '../clients/client-dialog/add-client-dialog.component';
 import { AddProductDialog } from '../products/product-dialog/add-product-dialog.component';
 import { CreateListDialog } from '../orders/list-dialog/create-list-dialog.component';
+import { CreateOrderDialog } from '../orders/order-dialog/create-order-dialog.component';
 import { MdDialogRef, MdDialog, MdDialogConfig } from '@angular/material';
 import { Injectable } from '@angular/core';
 
@@ -39,6 +40,18 @@ export class DialogsService {
         let dialogRef: MdDialogRef<CreateListDialog>;
 
         dialogRef = this.dialog.open(CreateListDialog, {
+            height: '95%',
+            width: '80%'
+        });
+
+        return dialogRef.afterClosed();
+    }
+
+    public createOrder(): Observable<boolean> {
+
+        let dialogRef: MdDialogRef<CreateOrderDialog>;
+
+        dialogRef = this.dialog.open(CreateOrderDialog, {
             height: '95%',
             width: '80%'
         });

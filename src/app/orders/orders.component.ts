@@ -32,24 +32,36 @@ export class OrdersComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getOrders();
+    this.getLists();
+  }
+
+  getOrders() {
     this.orderService.getOrderList().subscribe(response => {
       this.orders = response;
     });
+  }
+
+  getLists() {
     this.orderService.getLists().subscribe(response => {
       this.lists = response;
     });
   }
 
   filterOrders(val: any) {
-    return val ? this.orders.filter(s => new RegExp(`^${val}`, 'gi').test(s.name)) : this.orders;
+    return val ? this.lists.filter(s => new RegExp(`^${val}`, 'gi').test(s.client.name)) : this.lists;
   }
 
-  public createListDialog() {
+  createListDialog() {
     this.dialogService
       .createList()
-      .subscribe(res => this.orderService.getLists().subscribe(response => {
-        this.lists = response;
-      }));
+      .subscribe(res => this.getLists());
+  }
+
+  createOrderDialog() {
+    this.dialogService
+      .createOrder()
+      .subscribe(res => this.getOrders());
   }
 
 }

@@ -1,0 +1,35 @@
+<md-dialog-content>
+  <md-toolbar color="primary">
+    <h2>Novo Pedido</h2>
+    <span class="dash-spacer"></span>
+  </md-toolbar>
+
+  <md-toolbar color="primary">
+    <h4>Sel.</h4>
+    <span class="dash-spacer"></span>
+    <h4>Cliente</h4>
+    <span class="dash-spacer"></span>
+    <h2>Data Entrega</h2>
+    <span class="dash-spacer"></span>
+    <h4>Total</h4>
+  </md-toolbar>
+
+  <md-nav-list>
+    <div *ngFor="let list of lists; let idx=index">
+      <md-list-item>
+        <md-checkbox [(ngModel)]="list.sel" (ngModelChange)="updateList()"></md-checkbox>
+        <span class="dash-spacer"></span>
+        <span (click)=selectList()>{{list.client.name}}</span>
+        <span class="dash-spacer"></span>
+        <span>{{list.deliveryDate | date: 'd/M/y'}}</span>
+        <span class="dash-spacer"></span>
+        <span >{{list.total | currency:'BRL':true}}</span>
+      </md-list-item>
+    </div>
+  </md-nav-list>
+
+  <md-dialog-actions>
+    <button type="button" md-raised-button (click)="addOrder()">OK</button>
+    <button type="button" md-button (click)="dialogRef.close()">Cancel</button>
+  </md-dialog-actions>
+</md-dialog-content>

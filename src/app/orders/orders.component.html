@@ -14,14 +14,6 @@
             <button mdSuffix [mdDatepickerToggle]="picker"></button>
           </md-input-container>
           <md-datepicker #picker></md-datepicker>
-          <h3>Clientes:</h3>
-          <md-input-container>
-            <input type="text" mdInput placeholder="Todos" [formControl]="orderCtrl" [mdAutocomplete]="auto">
-          </md-input-container>
-          <h3>Produtos:</h3>
-          <md-input-container>
-            <input type="text" mdInput placeholder="Todos" [formControl]="orderCtrl" [mdAutocomplete]="auto">
-          </md-input-container>
 
           <md-autocomplete #auto="mdAutocomplete">
             <md-option *ngFor="let order of filteredOrders | async" [value]="order.name">
@@ -33,16 +25,16 @@
         <!-- Lista -->
 
         <md-toolbar color="primary">
-          <h4>Nome</h4>
+          <h4>Data Entrega</h4>
           <span class="dash-spacer"></span>
-          <h4>Tipo</h4>
+          <h4>Total</h4>
         </md-toolbar>
         <md-nav-list>
           <div *ngFor="let order of orders | search:orderCtrl.value">
             <md-list-item>
-              <span>{{order.name}}</span>
+              <span>{{order.deliveryDate  | date: 'd/M/y'}}</span>
               <span class="dash-spacer"></span>
-              <span>{{order.unit}}</span>
+              <span>{{order.total | currency:'BRL':true}}</span>
             </md-list-item>
           </div>
         </md-nav-list>
@@ -50,7 +42,7 @@
         <!-- Button -->
         <md-toolbar class="blend-color">
           <span class="dash-spacer"></span>
-          <button md-raised-button (click)="openDialog()">Novo Pedido</button>
+          <button md-raised-button (click)="createOrderDialog()">Novo Pedido</button>
         </md-toolbar>
       </md-tab>
 
@@ -81,7 +73,7 @@
           <span class="dash-spacer"></span>
           <h2>Entrega</h2>
           <span class="dash-spacer"></span>
-          <h4>Tipo</h4>
+          <h4>Total</h4>
         </md-toolbar>
         <md-nav-list>
           <div *ngFor="let list of lists">
